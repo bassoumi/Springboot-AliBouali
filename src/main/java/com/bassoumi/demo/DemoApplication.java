@@ -9,13 +9,12 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		var ctx = SpringApplication.run(DemoApplication.class, args);
-		MyFirstClass myFirstClass = ctx.getBean(MyFirstClass.class);
-		System.out.println(myFirstClass.sayHallow());
+		myFirstService myFirstService = ctx.getBean(myFirstService.class);
+		System.out.println(myFirstService.tellaStory());
+
+
 	}
 
 
 
-	@Bean MyFirstClass myFirstClass() {
-		return new MyFirstClass();
-	}
 }
