@@ -10,13 +10,8 @@ import java.util.Collections;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		var app = new SpringApplication(DemoApplication.class);
-		app.setDefaultProperties(Collections.singletonMap("spring.profiles.active", "dev"));
-		var ctx = app.run(args);
-		myFirstService myFirstService = ctx.getBean(myFirstService.class);
-		System.out.println(myFirstService.tellaStory());
-		System.out.println(myFirstService.getCustomPropertyFromAnotherFile());
-		System.out.println(myFirstService.getCustomProperty());
+		SpringApplication.run(DemoApplication.class);
+
 
 
 
