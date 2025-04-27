@@ -1,17 +1,27 @@
 package com.bassoumi.demo;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name ="t_student")
 public class student {
     @Id
+    @GeneratedValue()
     private Integer id ;
+    @Column (
+            name = "c-fname" ,
+            length = 20
+    )
     private String FirstName;
     private String LastName;
+
+    @Column(unique = true)
     private String Email;
     private Integer age;
+
+    @Column(updatable = false)
+    private String some_colum;
 
     public student() {
     }
