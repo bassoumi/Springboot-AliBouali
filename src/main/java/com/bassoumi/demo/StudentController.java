@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class FirsController {
+public class StudentController {
    private  final studentRepository repository;
 
-   public FirsController(studentRepository repository) {
+   public StudentController(studentRepository repository) {
        this.repository = repository;
    }
 
