@@ -1,60 +1,56 @@
 package com.bassoumi.demo;
 
-
 import jakarta.persistence.*;
 
 @Entity
-@Table(name ="t_student")
-public class student {
+@Table(name = "t_student")
+public class student {  // you want lowercase, keeping it like this
     @Id
     @GeneratedValue()
-    private Integer id ;
-    @Column (
-            name = "c-fname" ,
-            length = 20
-    )
-    private String FirstName;
-    private String LastName;
+    private Integer id;
 
-    @Column(unique = true)
-    private String Email;
+    private String firstname;
+    private String lastname;
+
+    @Column(unique=true)
+    private String email;
     private Integer age;
 
-    @Column(updatable = false)
-    private String some_colum;
-
+    // Default constructor
     public student() {
     }
 
-    public student(String firstName, String lastName, String email, Integer age) {
-        FirstName = firstName;
-        LastName = lastName;
-        Email = email;
+    // Constructor with fields
+    public student(String firstname, String lastname, String email, Integer age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
         this.age = age;
     }
 
-    public String getFirstName() {
-        return FirstName;
+    // Getters and Setters
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getLastName() {
-        return LastName;
-    }
-
-    public void setLastName(String lastName) {
-        LastName = lastName;
+        this.email = email;
     }
 
     public Integer getAge() {
