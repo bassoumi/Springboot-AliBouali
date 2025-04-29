@@ -17,10 +17,29 @@ public class StudentController {
 
     @PostMapping("/students")
     public student post(
-            @RequestBody student student
+            @RequestBody StudentDto dto
     ){
+       var student = toStudent(dto);
        return repository.save(student);
     }
+    private student toStudent(StudentDto dto) {
+        student student = new student();
+        student.setFirstname(dto.firstname());
+        student.setLastname(dto.lastname());
+        student.setEmail(dto.email());
+
+
+        if (dto.schoolId() != null) {
+            School school = new School();
+            school.setId(dto.schoolId());
+            student.setSchool(school);
+        } else {
+            student.setSchool(null); // explicitly set null or omit this line if default is null
+        }
+
+        return student;
+    }
+
 
     @GetMapping("/students")
     public List<student> findAllStudent(){
