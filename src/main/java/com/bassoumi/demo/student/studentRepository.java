@@ -1,4 +1,4 @@
-package com.bassoumi.demo;
+package com.bassoumi.demo.student;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

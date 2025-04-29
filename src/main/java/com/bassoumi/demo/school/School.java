@@ -1,5 +1,6 @@
-package com.bassoumi.demo;
+package com.bassoumi.demo.school;
 
+import com.bassoumi.demo.student.student;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

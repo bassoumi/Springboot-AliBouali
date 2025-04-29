@@ -1,4 +1,4 @@
-package com.bassoumi.demo;
+package com.bassoumi.demo.school;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,22 +10,24 @@ import java.util.List;
 
 @RestController
 public class schoolController {
-    private final SchoolRepository SchoolRepository;
+ private final SchoolService schoolService;
 
-    public schoolController(SchoolRepository schoolRepository) {
-        SchoolRepository = schoolRepository;
+    public schoolController(SchoolService schoolService) {
+        this.schoolService = schoolService;
     }
 
     @PostMapping("/schools")
-    public School create(
-            @RequestBody School school
+    public SchoolDto saveSchool(
+            @RequestBody SchoolDto dto
     ){
-       return SchoolRepository.save(school);
+       return this.schoolService.saveSchool(dto);
     }
 
+
     @GetMapping("/schools")
-    public List<School> findAll(){
-        return SchoolRepository.findAll();
+    public List<SchoolDto> findAll() {
+   return this.schoolService.findAll();
     }
+
 
 }

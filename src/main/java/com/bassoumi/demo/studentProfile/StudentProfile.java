@@ -1,6 +1,7 @@
-package com.bassoumi.demo;
+package com.bassoumi.demo.studentProfile;
 
 
+import com.bassoumi.demo.student.student;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,7 +18,7 @@ public class StudentProfile {
             name = "student_id"
     )
 
-    private  student student;
+    private student student;
     public StudentProfile() {
     }
     public Integer getId() {

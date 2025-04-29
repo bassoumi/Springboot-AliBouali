@@ -1,6 +1,4 @@
-package com.bassoumi.demo;
-
-import jakarta.persistence.Column;
+package com.bassoumi.demo.student;
 
 public record StudentDto(
 

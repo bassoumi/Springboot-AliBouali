@@ -1,5 +1,7 @@
-package com.bassoumi.demo;
+package com.bassoumi.demo.student;
 
+import com.bassoumi.demo.school.School;
+import com.bassoumi.demo.studentProfile.StudentProfile;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
