@@ -26,6 +26,11 @@ class StudentMapperTest {
         assertNotNull(student.getSchool());
         assertEquals(dto.schoolId(), student.getSchool().getId());
     }
+    @Test
+    public void should_throw_studentDto_to_student_when_studentDto_is_null() {
+        var exp = assertThrows(NullPointerException.class, () -> mapper.toStudent(null));
+        assertEquals("dto cannot be null", exp.getMessage());
+    }
 
 
     @Test
